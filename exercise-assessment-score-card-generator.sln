@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30406.217
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AssessmentScoreCardGenerator", "AssessmentScoreCardGenerator\AssessmentScoreCardGenerator.csproj", "{4C6D5B96-FDA2-4527-AD25-C963F7DBFD9A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "test\test.csproj", "{0BE8EB67-DFFC-49B7-9962-00C28618534A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C6D5B96-FDA2-4527-AD25-C963F7DBFD9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C6D5B96-FDA2-4527-AD25-C963F7DBFD9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C6D5B96-FDA2-4527-AD25-C963F7DBFD9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C6D5B96-FDA2-4527-AD25-C963F7DBFD9A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0BE8EB67-DFFC-49B7-9962-00C28618534A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0BE8EB67-DFFC-49B7-9962-00C28618534A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0BE8EB67-DFFC-49B7-9962-00C28618534A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0BE8EB67-DFFC-49B7-9962-00C28618534A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {993712BD-74DC-46A7-B129-F5D1C61915F6}
+	EndGlobalSection
+EndGlobal
