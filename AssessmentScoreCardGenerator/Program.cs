@@ -1,18 +1,9 @@
 using System;
+using System.Text;
 
 namespace AssessmentScoreCardGenerator
 {
 
-    /* 
-     * Declare enum AssessmentType with named constant for types of assessments
-     * assessment types with the maximum score is:
-     * QUIZ - 50
-     * KBA - 100
-     * CALIBRATION - 150
-     * HACKATHON - 200
-
-     * the maximum score can be set as value for enum constants
-     */
     public enum AssessmentType
     {
         QUIZ = 50,
@@ -21,10 +12,6 @@ namespace AssessmentScoreCardGenerator
         HACKATHON = 200
     }
 
-    /*
-     * Declare struct AssessmentCard
-     * Structure members should be assessmentType, score and datetime
-     */
     public struct AssessmentCard
     {
         public AssessmentType assessmentType;
@@ -36,34 +23,40 @@ namespace AssessmentScoreCardGenerator
     {
         public static void Main(string[] args)
         {
-            
-            // this code is optional here however it wil help 
-            // you to understand the requirements better    
+              
         }
         // this method accepts assessment cards and calculates total percentage
         public static int GetOverallScore(AssessmentCard[] cards)
         {
-            // the logic put here should use foreach loop to read 
-            // card data and calculate percentage as mentioned.
-            // the maximum score value for each assessment type can be retrieve
-            // from enum constant    
             int totalScore = 0, maxScore = 0;
 
             foreach(AssessmentCard card in cards)
             {
-                maxScore += Enum.GetValues(typeof(card.assessmentType));
+                maxScore += (int)card.assessmentType;
+                totalScore += card.score;
             }
-            return 0;
+            return (totalScore * 100)/maxScore;
         }
 
         // this method should generate score card from the details provided
-        public static string GenerateScoreCard()
+        public static string GenerateScoreCard(int cadetID, string cadetName, AssessmentCard[] cards, int overallPercentage)
         {
-            // the code here should build string with contents such as
-            // cadet no, cadet name, calibration type, score obtained
-
-            // the built string should be returned as string and not as StringBuilder
-            return null;
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("Cadet ID: " + cadetID);
+            sb.AppendLine("Cadet Name: " + cadetName);
+            foreach(AssessmentCard card in cards)
+            {
+                sb.AppendLine();
+                if(card.dateTime > DateTime.MinValue)
+                {
+                    sb.Append("Date: " + card.dateTime + ", ");
+                }
+                sb.Append("Assessment type: " + card.assessmentType);
+                sb.Append("( Max Score: " + (int)card.assessmentType + " ), ");
+                sb.Append("Score Obtained: " + card.score);
+            }
+            sb.AppendLine("OverAll Percentage: " + overallPercentage + "%");
+            return sb.ToString();
         }
     }
 
